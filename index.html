@@ -1,120 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <!-- Thẻ viewport cực kỳ quan trọng để web tự co giãn trên điện thoại -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ken Nguyen</title>
+    <title>Ken Nguyen - Mobile Version</title>
     <style>
+        /* --- Reset cơ bản cho mobile --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             background-color: rgb(180, 160, 178);
             font-family: Arial, sans-serif;
             display: flex;
-            align-items: center;
-            margin: 0;
             flex-direction: column;
-            overflow-x: hidden;
-            margin-top: 30px;
+            align-items: center;
             width: 100%;
+            overflow-x: hidden; /* Ngăn cuộn ngang */
+            padding: 10px;
+            padding-top: 20px;
         }
-        .ly-lich {
-            background-color: #f7f9fa;
-            padding: 20px;
+
+        /* --- Định dạng chung cho ảnh --- */
+        img {
+            max-width: 95%; /* Ảnh không bao giờ tràn quá 95% màn hình */
+            height: auto; /* Tự động điều chỉnh chiều cao theo chiều rộng */
+            display: block;
+            margin: 0 auto;
+            border-radius: 16px; /* Bo góc mặc định */
+        }
+
+        /* --- Khối tiêu đề LÝ LỊCH và TÁC PHẨM --- */
+        .section-title {
+            color: white;
+            font-size: 24px; /* Chữ nhỏ hơn cho hợp mobile */
+            font-weight: bold;
+            font-family: 'Monterrac', sans-serif;
+            width: 95%;
             border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 25px;
+            margin-bottom: 10px;
             text-align: center;
-            width: 90%;
-            max-width: 800px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            word-wrap: break-word; /* Tự xuống dòng nếu chữ dài */
+        }
+
+        /* --- Định dạng các khối chứa ảnh ngang (Sẽ tự động đổi thành dọc trên mobile) --- */
+        .content-row {
+            display: flex;
+            flex-direction: column; /* MẶC ĐỊNH LÀ XẾP DỌC CHO MOBILE */
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            margin-top: 10px;
+            gap: 15px; /* Khoảng cách giữa các phần tử */
+        }
+
+        /* --- Định dạng nội dung văn bản trong Lý lịch --- */
+        .info-box {
+            color: #333;
+            font-size: 18px; /* Chữ nhỏ hơn cho dễ đọc trên mobile */
+            font-weight: bold;
+            text-align: center;
+            width: 95%;
+            background-color: #f7f9fa;
+            padding: 15px;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            line-height: 1.6; /* Tăng khoảng cách dòng */
+            word-wrap: break-word;
+        }
+
+        /* --- TÙY CHỈNH RIÊNG CHO TỪNG PHẦN TỬ NẾU CẦN --- */
+        
+        /* Ảnh Lý lịch (ảnh 2.1) */
+        .ly-lich-img {
+             height: auto !important; /* Bỏ chiều cao cố định để ảnh co giãn đúng tỉ lệ */
+             width: 95% !important;
         }
         
-        img {
-            max-width: 90%;
-            border-radius: 16px;
+        /* Các ảnh Tác phẩm (ép vuông hoặc tự do co giãn) */
+        .tac-pham-img {
+            width: 95% !important; /* Ép chiều rộng */
+            height: auto !important; /* Tự động chiều cao */
+            margin-bottom: 10px !important;
         }
 
-        /* Khung chứa nằm ngang trên máy tính */
-        .vung-chua-ngang {
-            display: flex;
-            flex-direction: row; 
-            align-items: center; 
-            justify-content: center;
-            width: 90%;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .tac-pham {
-            display: flex;
-            flex-direction: row; 
-            align-items: center; 
-            justify-content: center;
-            width: 90%;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        /* --- PHẦN TỰ ĐỘNG ĐIỀU CHỈNH CHO ĐIỆN THOẠI (RESPONSIVE) --- */
-        @media (max-width: 768px) {
-            .vung-chua-ngang, .tac-pham {
-                flex-direction: column !important; /* Chuyển thành xếp dọc trên điện thoại */
-            }
-            .vung-chua-ngang img, .tac-pham img {
-                width: 90% !important;
-                height: auto !important;
-                margin-left: 0 !important;
-                margin-top: 15px !important;
-            }
+        /* --- PHẦN QUAN TRỌNG: NẾU MÀN HÌNH RỘNG (TABLET/PC), CHUYỂN VỀ XẾP NGANG --- */
+        @media (min-width: 768px) {
             body {
-                margin-top: 10px;
+                padding: 30px;
+            }
+            .content-row {
+                flex-direction: row; /* Chuyển thành xếp ngang */
+            }
+            img {
+                width: auto !important; /* Cho phép ảnh giữ kích thước gốc hoặc theo % của cha */
+                max-width: 45%; /* Không chiếm quá 45% chiều rộng khi xếp ngang */
+            }
+            .ly-lich-img {
+                width: 30% !important;
+            }
+            .tac-pham-img {
+                 width: 30% !important;
+            }
+             .info-box {
+                 width: auto;
+                 flex: 1; /* Chiếm phần không gian còn lại */
+             }
+            .section-title {
+                font-size: 28px;
             }
         }
+
     </style>
 </head>
 <body>
 
     <!-- Ảnh pha lê ở trên -->
-    <img src="nền/phale.png" style="border: 4px solid #e05ccc; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+    <img src="nền/phale.png" style="border: 4px solid #e05ccc; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
     
-    <p style="background-color: #cd7cc2; color: white; border: 4px solid #ee8fe1; font-size: 28px; font-weight: bold; font-family: 'Monterrac', sans-serif; width: 90%; border-radius: 16px; margin-top: 10px; text-align: center; padding: 10px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+    <!-- Tiêu đề LÝ LỊCH -->
+    <p class="section-title" style="background-color: #cd7cc2; border: 4px solid #ee8fe1;">
         ___-->LÝ LỊCH<--___
     </p>
 
-    <!-- Khung bọc chung cho ảnh chân dung và cái cột -->   
-    <div class="vung-chua-ngang" style="gap: 15px;">
-        <!-- Tấm ảnh thứ 2 -->
-        <img src="anh/anh2,1.png" style="width: 30%; height: 370px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);">
+    <!-- Khung chứa LÝ LỊCH (Sẽ tự động xếp dọc trên mobile) -->
+    <div class="content-row" style="gap: 5px;">
+        <!-- Ảnh chân dung -->
+        <img src="anh/anh2,1.png" class="ly-lich-img" style="box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);">
         
-        <!-- Cái cột -->
-        <div style="color: #333; font-size: 20px; font-weight: bold; text-align: center;">
+        <!-- Cột văn bản -->
+        <div class="info-box">
             ══════ஜ۩۞۩ஜ══════<br> 
-            tên: <br>--------------------------------------<br>
+            Tên: <br>--------------------------------------<br>
             STĐ: <br>--------------------------------------<br>
             Ngày sinh: <br>--------------------------------------<br>
             Quê quán: <br>--------------------------------------<br><br>━━━━━✧❂✧━━━━━<br> 
         </div>
 
-        <img src="anh/anh3.png" style="width: 230px; height: 350px; border-radius: 40px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);">
-        <img src="anh/anh4.jpg" style="width: 230px; height: 350px; border-radius: 50px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); border: 4px dashed #cd7cc2;">
+        <!-- Ảnh Ken -->
+        <img src="anh/anh3.png" class="ly-lich-img" style="width: 230px; height: 350px; border-radius: 40px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);">
+        
+        <!-- Ảnh Ken vest -->
+        <img src="anh/anh4.jpg" class="ly-lich-img" style="width: 230px; margin-top: 10px; height: 350px; border-radius: 50px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); border: 4px dashed #cd7cc2;">
     </div>
 
-    <p style="background-color: #c089e0; color: white; border: 4px solid #ee8fe1; font-size: 28px; font-weight: bold; font-family: 'Monterrac', sans-serif; width: 90%; border-radius: 16px; margin-top: 20px; text-align: center; padding: 10px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+    <!-- Tiêu đề TÁC PHẨM -->
+    <p class="section-title" style="background-color: #c089e0; border: 4px solid #ee8fe1; margin-top: 30px;">
         ___-->TÁC PHẨM<--___
     </p>
 
-    <div class="tac-pham" style="gap: 20px;">
-       <img src="anh/tp1.jpg" style="width: 30%; height: 400px; border-radius: 16px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);">
-       <img src="anh/tp2.jpg" style="width: 30%; height: 400px; border-radius: 16px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);">
-       <img src="anh/tp4.jpg" style="width: 30%; height: 400px; border-radius: 16px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);">
+    <!-- Hàng 1 Tác phẩm (Sẽ tự động xếp dọc trên mobile) -->
+    <div class="content-row" style="gap: 10px;">
+       <img src="anh/tp1.jpg" class="tac-pham-img" style="box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);">
+       <img src="anh/tp2.jpg" class="tac-pham-img" style="box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);">
+       <img src="anh/tp4.jpg" class="tac-pham-img" style="box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);">
     </div>
 
-    <div class="tac-pham" style="gap: 20px;">
-       <img src="anh/tp5.jpg" style="width: 30%; height: 400px; border-radius: 16px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);">
-       <img src="logo/logo.jpg" style="width: 30%; height: 390px; border-radius: 100px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); border: 4px dashed #cd7cc2;">
-       <img src="anh/tp7.jpg" style="width: 30%; height: 400px; border-radius: 16px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);">
+    <!-- Hàng 2 Tác phẩm -->
+    <div class="content-row" style="gap: 10px; margin-top: 10px;">
+       <img src="anh/tp5.jpg" class="tac-pham-img" style="box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);">
+       <img src="logo/logo.jpg" class="tac-pham-img" style="height: 390px; border-radius: 100px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); border: 4px dashed #cd7cc2;">
+       <img src="anh/tp7.jpg" class="tac-pham-img" style="box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);">
     </div>
 
-    <div class="tac-pham" style="gap: 20px;">
-       <img src="anh/tp8.jpg" style="width: 30%; height: 400px; border-radius: 16px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);">
-       <img src="anh/tp9.jpg" style="width: 30%; height: 400px; border-radius: 16px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);">
-       <img src="anh/tp10.jpg" style="width: 30%; height: 400px; border-radius: 16px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);">
+    <!-- Hàng 3 Tác phẩm -->
+    <div class="content-row" style="gap: 10px; margin-top: 10px;">
+        <img src="anh/tp8.jpg" class="tac-pham-img" style="box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);">
+        <img src="anh/tp9.jpg" class="tac-pham-img" style="box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);">
+        <img src="anh/tp10.jpg" class="tac-pham-img" style="box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);">
     </div>
 
 </body>
