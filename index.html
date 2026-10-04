@@ -13,7 +13,7 @@
     flex-direction: column;
     gap: 30px;
     align-items: center;
-    overflow-x: hidden; /* Tránh tràn màn hình ngang */
+    overflow-x: hidden;
   }
 
   /* Khung chứa ảnh logo ở trên */
@@ -148,7 +148,7 @@
 
   .chu1 {
     width: 300px;
-    height: 500px; /* Cố định chiều cao chuẩn để ảnh không bị bẹp */
+    height: 500px;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
@@ -172,6 +172,7 @@
   .do { background-color: red; border-radius: 50%; width: 25px; height: 25px; }
   .xanh { background-color: green; border-radius: 50%; width: 25px; height: 25px; }
 
+  /* Khu vực ảnh cận cảnh mắt (chua2) */
   .chua2 {
     display: flex;
     align-items: center;
@@ -259,8 +260,7 @@
   }
 
   /* ==========================================================
-     TỰ ĐỘNG THU NHỎ (SCALE) CHUẨN XÁC CHO ĐIỆN THOẠI 
-     GIỮ NGUYÊN 100% GIAO DIỆN NHƯ TRÊN PC
+     PHẦN TỐI ƯU CHO ĐIỆN THOẠI (MEDIA QUERY)
      ========================================================== */
   @media (max-width: 768px) {
     body {
@@ -305,7 +305,7 @@
     .chu1 {
       width: 65px;
       height: 110px;
-      margin-left: -18px; /* Giữ nguyên hiệu ứng đè lớp so le y chang PC */
+      margin-left: -18px;
     }
     .chu1:nth-child(odd) { transform: translateY(10px); }
     .chu1:nth-child(even) { transform: translateY(-10px); }
@@ -315,15 +315,34 @@
       padding: 0 10px;
       line-height: 1.4;
     }
-    .chua2, .chua3 {
-      height: 70px;
-      gap: 8px;
+
+    /* Đã sửa phần này để ảnh mắt hiển thị chuẩn, không bị phóng to cắt xén */
+    .chua2 {
+      height: 110px;
       width: 100%;
+      gap: 6px;
     }
-    .dong, .dong1 {
-      height: 60px;
-      margin-top: -20px;
+    .dong {
+      height: 100px;
+      width: 23%;
+      object-fit: cover; /* Hoặc đổi thành 'contain' nếu bạn muốn thấy toàn bộ khung ảnh gốc mà không bị cắt */
+      border-radius: 6px;
+      margin-top: 0; /* Đưa về vị trí cân bằng, không bị lệch âm lên trên */
     }
+
+    .chua3 {
+      height: 110px;
+      width: 100%;
+      gap: 6px;
+    }
+    .dong1 {
+      height: 100px;
+      width: 23%;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-top: 0;
+    }
+
     .chua04 {
       width: 100%;
       gap: 8px;
@@ -333,7 +352,7 @@
     }
     .trananh {
       gap: 20px;
-      flex-direction: column; /* Trên điện thoại phần tìm hiểu thêm xếp dọc xuống cho dễ bấm */
+      flex-direction: column;
     }
     .trananh1 {
       width: 220px;
