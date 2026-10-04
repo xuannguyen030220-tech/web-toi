@@ -20,7 +20,7 @@
     overflow-x: hidden;
   }
 
-  /* Khung chứa ảnh logo ở trên - Đã tăng chiều cao lên chút để logo không bị tụt */
+  /* Khung chứa ảnh logo ở trên */
   .khung-anh {
     background-image: url('nền/nen1.png');
     background-size: cover;          
@@ -43,7 +43,7 @@
     height: auto;
     object-fit: contain;
     position: absolute;
-    bottom: 30px; /* Đẩy logo lên cao hơn một chút */
+    bottom: 30px;
   }
 
   /* Khung tiêu đề */
@@ -123,72 +123,72 @@
     text-align: center;
   }
 
-  /* Dãy ảnh lý lịch ngang */
+  /* ==========================================
+     ĐIỆN THOẠI: ÉP TẤT CẢ THÀNH 1 HÀNG NGANG
+     ========================================== */
+  
+  /* Lý lịch (5 ảnh) */
   .chua0 {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;  
-    flex-wrap: wrap; 
-    gap: 8px;
+    flex-wrap: nowrap; /* Không cho xuống dòng */
+    gap: 4px;
     width: 100%;
   }
-
   .chu1 {
-    width: 18%; 
-    max-width: 75px;
-    height: 95px;
+    width: 19%; /* Chia đều cho 5 ảnh nằm gọn 1 hàng */
+    height: 110px;
     object-fit: cover;
-    object-position: center top; /* Đổi thành căn từ trên xuống để không bị mất đầu ảnh */
+    object-position: center top;
     border-radius: 6px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  /* Khách hàng nhóm 1 (4 ảnh) và Nhóm 2 (4 ảnh) */
+  .chua2, .chua3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+    flex-wrap: nowrap; /* Không cho xuống dòng */
+    width: 100%;
+    gap: 4px;
+  }
+  .dong, .dong1 {
+    width: 24%; /* Chia đều cho 4 ảnh nằm gọn 1 hàng */
+    height: 90px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  /* Cơ sở (3 ảnh) */
+  .chua04 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+    flex-wrap: nowrap; /* Không cho xuống dòng */
+    width: 100%;
+    gap: 6px;
+  }
+  .chua4 {
+    width: 32%; /* Chia đều cho 3 ảnh nằm gọn 1 hàng */
+    height: 130px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 6px;
+    border: 1.5px solid #7273c588;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   /* Chấm màu trang trí */
   .cam { background-color: orange; border-radius: 50%; width: 15px; height: 15px; }
   .do { background-color: red; border-radius: 50%; width: 15px; height: 15px; }
   .xanh { background-color: green; border-radius: 50%; width: 15px; height: 15px; }
-
-  /* Khung chứa ảnh khách hàng */
-  .chua2, .chua3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row; 
-    flex-wrap: wrap; 
-    width: 100%;
-    gap: 8px;
-  }
-
-  .dong, .dong1 {
-    width: 48%; 
-    height: 110px;
-    object-fit: cover;
-    object-position: center top; /* Giữ hiển thị chuẩn phần đầu ảnh */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
-
-  /* Khung chứa ảnh cơ sở */
-  .chua04 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row; 
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 8px;
-  }
-
-  .chua4 {
-    width: 31%;
-    height: 150px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 8px;
-    border: 2px solid #7273c588;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
 
   /* Phần Tìm Hiểu Thêm */
   .trananh {
@@ -243,6 +243,8 @@
     .chu {
       font-size: 70px;
     }
+    
+    .chua0 { flex-wrap: wrap; }
     .chu1 {
       width: 220px;
       max-width: none;
@@ -253,10 +255,13 @@
     .chu1:nth-child(odd) { transform: translateY(20px); }
     .chu1:nth-child(even) { transform: translateY(-20px); }
 
+    .chua2, .chua3 { flex-wrap: wrap; }
     .dong, .dong1 {
       width: 23%;
       height: 140px;
     }
+
+    .chua04 { flex-wrap: wrap; }
     .chua4 {
       width: 30%;
       height: 400px;
@@ -288,7 +293,7 @@
 
     <div class="cach"></div>
 
-    <!-- Khung 2 chứa nội dung bên trong -->
+    <!-- Khung 2 chứa nội dung mờ -->
     <div class="khung2">
         <div class="chu">KEN NGUYỄN (1990)</div>
         <div class="chua0">
