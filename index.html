@@ -290,6 +290,292 @@
     height: 400px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   }
+ @media (max-width: 768px) {
+  body {
+    background-color: #2a3148;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  /* Khung chứa ảnh logo ở trên */
+  .khung-anh {
+    background-image: url('nền/nen1.png');
+    background-size: cover;          
+    background-repeat: no-repeat;    
+    background-position: center;     
+    width: 100%;    
+    height: 100px;  
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo {
+    margin-top: 70px;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    position: absolute;
+  }
+
+  /* Khung nút bấm LÝ LỊCH */
+  /* Khung nút bấm LÝ LỊCH */
+  .chua {
+    background-color: #22283a;
+    width: fit-content;           /* Chỉ rộng vừa đúng bằng chữ và các chấm tròn bên trong, không bị thừa ra */
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;         
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 15px 25px;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    
+    /* Dùng margin-right: auto để đẩy phần thừa sang phải, giúp khung nép gọn về bên trái */
+    margin-right: auto;           
+    margin-top: 130px;
+  }
+  .chua1 {
+    background-color: #22283a;
+    width: fit-content;           /* Chỉ rộng vừa đúng bằng chữ và các chấm tròn bên trong, không bị thừa ra */
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;         
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 15px 25px;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    
+    /* Dùng margin-right: auto để đẩy phần thừa sang phải, giúp khung nép gọn về bên trái */
+    margin-right: auto;           
+    margin-top: 10px;
+  }
+
+  /* Thanh phân cách */
+  .cach {
+    background-color: #243467;
+    width: 100%;
+    height: 7px;
+    border-radius: 10px;
+  }
+
+  /* Khung 2: Dùng position: relative để làm gốc neo cho các lớp bên trong */
+  .khung2 {
+    position: relative;
+    width: 110%;
+    height: 800px;
+    border-radius: 16px;
+    overflow: hidden;
+    /* Dùng Flexbox để canh chỉnh các phần tử bên trong theo chiều dọc */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: -30px;
+  }
+
+  /* LỚP 1: Chuyên chứa ảnh nền và làm mờ (nằm ở dưới cùng) */
+  .khung2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('anh/23.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(13px) brightness(0.55); /* Tạo hiệu ứng hơi nước mờ ảo */
+    opacity: 0.85;
+    z-index: 1; /* Nằm ở lớp dưới */
+    /* Thêm đoạn này để phần đáy của khung nền mờ tan biến và hòa quyện vào màu nền trang web */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+  }
+
+  /* Đảm bảo mọi thứ bên trong khung2 nằm ở lớp trên lớp mờ và không bị mờ theo */
+  .khung2 > * {
+    position: relative;
+    z-index: 2;
+  }
+  .pl {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    align-self: center;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .chu {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80px;         
+    font-weight: bold;
+    margin-top: 40px;
+  }
+  .chua0 {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;  
+    display: flex;
+    margin-top: 100px;
+  }
+
+  .chu1 {
+    width: 300px; /* Thu nhỏ kích thước ảnh phụ lại cho vừa khung */
+    height: 80%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;           /* Giúp bật tính năng xếp lớp z-index */
+    margin-left: -80px;           /* Kéo bức ảnh lùi về sau để đè lên bức đứng trước nó */
+  }
+  /* Riêng tấm ảnh đầu tiên trong dãy thì không cần kéo lùi */
+  .chu1:first-of-type {
+    margin-left: 0;
+  }
+  /* Ảnh thứ 1, 3, 5... (Lẻ): Đẩy xuống thấp hơn */
+  .chu1:nth-child(odd) {
+    transform: translateY(30px); /* Dịch xuống dưới 30px */
+  }
+
+  /* Ảnh thứ 2, 4, 6... (Chẵn): Kéo lên cao hơn */
+  .chu1:nth-child(even) {
+    transform: translateY(-30px); /* Dịch lên trên 30px */
+  }
+
+  .cam {
+    background-color: orange;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+  }
+
+  .do {
+    background-color: red;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+  }
+
+  .xanh {
+    background-color: green;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+  }
+  .chua2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+    height: 150px;
+    width: 95%;
+    gap: 20px;
+  }
+
+  .dong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+    height: 100px;
+    width: 25%;
+    gap: 20px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: -50px;
+  }
+
+   .chua3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+    height: 90%px;
+    width: 95%;
+    gap: 20px;
+  }
+
+  .dong1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+    height: 90%;
+    width: 25%;
+    gap: 20px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: -50px;
+  }
+
+  .chua04 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+    height: 90%;
+    width: 80%;
+    gap: 20px;
+    margin-top: -10px;
+  }
+
+   .chua4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 480px;
+    width: 50%;
+    gap: 20px;
+    border-radius: 10px;
+    border: 4px solid #7273c543;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  .anhnut {
+    display: flex;                          /* Bật chế độ Flexbox để căn chỉnh linh hoạt */
+    flex-direction: row;                 /* Sắp xếp các phần tử bên trong theo chiều ngang */
+    align-items: center;                    /* Canh giữa các phần tử theo chiều ngang */
+    justify-content: center;                /* Canh giữa các phần tử theo chiều dọc */
+    height: 100vh;                          /* Ép chiều cao toàn trang bằng 100% màn hình thiết bị */
+    margin: 0;                              /* Xóa bỏ khoảng cách viền mặc định của trình duyệt */
+  }
+  .trananh {
+    display: flex;                          /* Bật chế độ Flexbox để căn chỉnh linh hoạt */
+    flex-direction: row;                 /* Sắp xếp các phần tử bên trong theo chiều dọc (từ trên xuống) */
+    align-items: center;                    /* Canh giữa các phần tử theo chiều ngang */
+    justify-content: center;                /* Canh giữa các phần tử theo chiều dọc */
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    gap: 90px;
+  }
+
+  .trananh1 {
+    display: flex;                          /* Bật chế độ Flexbox để căn chỉnh linh hoạt */
+    flex-direction: row;                 /* Sắp xếp các phần tử bên trong theo chiều dọc (từ trên xuống) */
+    align-items: center;                    /* Canh giữa các phần tử theo chiều ngang */
+    justify-content: center;                /* Canh giữa các phần tử theo chiều dọc */
+    border-radius: 30%;
+    width: 400px;
+    height: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+}
 
 </style>
 <body>
