@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KEN NGUYỄN</title>
+    <title>KEN NGUYEN</title>
 <style>
-  * {
-    box-sizing: border-box;
-  }
-
   body {
     background-color: #2a3148;
     margin: 0;
-    padding: 12px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Tránh tràn màn hình ngang */
   }
 
   /* Khung chứa ảnh logo ở trên */
@@ -26,10 +22,9 @@
     background-size: cover;          
     background-repeat: no-repeat;    
     background-position: center;    
-    width: 100%;    
-    height: 320px;  
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 110%;    
+    height: 400px;  
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -38,51 +33,69 @@
   }
   
   .logo {
-    width: 85%;
-    max-width: 320px;
-    height: auto;
+    margin-top: 270px;
+    width: 800px;
+    height: 800px;
     object-fit: contain;
     position: absolute;
-    bottom: 30px;
   }
 
-  /* Khung tiêu đề */
-  .chua, .chua1 {
+  /* Khung nút bấm LÝ LỊCH */
+  .chua {
     background-color: #22283a;
     width: fit-content;          
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 22px;         
+    font-size: 35px;         
     font-weight: bold;
-    border-radius: 8px;
-    padding: 8px 15px;
-    gap: 10px;
+    border-radius: 10px;
+    padding: 15px 25px;
+    gap: 15px;
     display: flex;
     align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     margin-right: auto;          
+    margin-top: 130px;
+  }
+  
+  .chua1 {
+    background-color: #22283a;
+    width: fit-content;          
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;         
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 15px 25px;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-right: auto;          
+    margin-top: 10px;
   }
 
   /* Thanh phân cách */
   .cach {
     background-color: #243467;
-    width: 100%;
-    height: 5px;
+    width: 110%;
+    height: 7px;
     border-radius: 10px;
   }
 
-  /* Khung 2 chứa nội dung mờ */
+  /* Khung 2 */
   .khung2 {
     position: relative;
-    width: 100%;
-    border-radius: 14px;
+    width: 110%;
+    height: 800px;
+    border-radius: 16px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    padding: 20px 8px;
+    gap: 20px;
+    margin-top: -30px;
   }
 
   .khung2::before {
@@ -93,7 +106,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    filter: blur(12px) brightness(0.55);
+    filter: blur(13px) brightness(0.55);
     opacity: 0.85;
     z-index: 1;
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
@@ -107,179 +120,229 @@
 
   .pl {
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 35px;
+    align-self: center;
     text-align: center;
-    line-height: 1.6;
-    padding: 0 5px;
-    margin: 0;
+    line-height: 1.5;
   }
 
   .chu {
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 28px;         
+    font-size: 80px;         
     font-weight: bold;
-    text-align: center;
+    margin-top: 40px;
   }
 
-  /* ==========================================
-     ĐIỆN THOẠI: 1 HÀNG NGANG, ĐỦ KHÔNG BỊ CẮT
-     ========================================== */
-  
-  /* Lý lịch (5 ảnh) */
   .chua0 {
-    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;  
-    flex-wrap: nowrap; 
-    gap: 4px;
-    width: 100%;
-  }
-  .chu1 {
-    width: 19%; 
-    height: 140px; /* Tăng chiều cao để đủ chỗ chứa ảnh */
-    object-fit: cover;
-    object-position: center; /* Căn giữa để không mất đầu/đuôi */
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: flex;
+    margin-top: 100px;
   }
 
-  /* Khách hàng nhóm 1 và Nhóm 2 (4 ảnh mỗi hàng) */
-  .chua2, .chua3 {
+  .chu1 {
+    width: 300px;
+    height: 500px; /* Cố định chiều cao chuẩn để ảnh không bị bẹp */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;          
+    margin-left: -80px;          
+  }
+
+  .chu1:first-of-type {
+    margin-left: 0;
+  }
+
+  .chu1:nth-child(odd) {
+    transform: translateY(30px); 
+  }
+
+  .chu1:nth-child(even) {
+    transform: translateY(-30px); 
+  }
+
+  .cam { background-color: orange; border-radius: 50%; width: 25px; height: 25px; }
+  .do { background-color: red; border-radius: 50%; width: 25px; height: 25px; }
+  .xanh { background-color: green; border-radius: 50%; width: 25px; height: 25px; }
+
+  .chua2 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row; 
-    flex-wrap: nowrap; 
-    width: 100%;
-    gap: 4px;
-  }
-  .dong, .dong1 {
-    width: 24%; 
-    height: 140px; /* Tăng chiều cao lên cho thoáng ảnh */
-    object-fit: cover; 
-    object-position: center; /* Hiển thị trọn vẹn toàn bộ ảnh */
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    height: 150px;
+    width: 95%;
+    gap: 20px;
   }
 
-  /* Cơ sở (3 ảnh) */
+  .dong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+    height: 120px;
+    width: 25%;
+    gap: 20px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: -50px;
+  }
+
+  .chua3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+    height: 150px;
+    width: 95%;
+    gap: 20px;
+  }
+
+  .dong1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+    height: 120px;
+    width: 25%;
+    gap: 20px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: -50px;
+  }
+
   .chua04 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row; 
-    flex-wrap: nowrap; 
-    width: 100%;
-    gap: 6px;
+    width: 80%;
+    gap: 20px;
+    margin-top: -10px;
   }
+
   .chua4 {
-    width: 32%; 
-    height: 150px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 6px;
-    border: 1.5px solid #7273c588;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Chấm màu trang trí */
-  .cam { background-color: orange; border-radius: 50%; width: 15px; height: 15px; }
-  .do { background-color: red; border-radius: 50%; width: 15px; height: 15px; }
-  .xanh { background-color: green; border-radius: 50%; width: 15px; height: 15px; }
-
-  /* Phần Tìm Hiểu Thêm */
-  .trananh {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 480px;
+    width: 50%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 4px solid #7273c543;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .trananh {
+    display: flex;          
+    flex-direction: row;                 
+    align-items: center;                    
+    justify-content: center;                
+    border-radius: 20px;
     width: 100%;
-    gap: 15px;
+    gap: 90px;
   }
 
   .trananh1 {
-    width: 100%;
-    max-width: 260px;
-    height: 200px;
+    border-radius: 30%;
+    width: 400px;
+    height: 400px;
     object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   }
 
-  /* ==========================================
-     TỐI ƯU RIÊNG CHO MÁY TÍNH (PC)
-     ========================================== */
-  @media (min-width: 768px) {
+  /* ==========================================================
+     TỰ ĐỘNG THU NHỎ (SCALE) CHUẨN XÁC CHO ĐIỆN THOẠI 
+     GIỮ NGUYÊN 100% GIAO DIỆN NHƯ TRÊN PC
+     ========================================================== */
+  @media (max-width: 768px) {
     body {
-      padding: 30px;
-      gap: 40px;
+      padding: 10px;
+      gap: 15px;
     }
     .khung-anh {
-      height: 400px;
-      width: 110%;
+      height: 220px;
+      width: 100%;
     }
     .logo {
-      max-width: 700px;
-      bottom: -150px;
-    }
-    .chua, .chua1 {
-      font-size: 35px;
-      padding: 15px 25px;
-    }
-    .cach {
-      width: 110%;
-      height: 7px;
-    }
-    .khung2 {
-      width: 110%;
-    }
-    .pl {
-      font-size: 26px;
-      max-width: 900px;
-    }
-    .chu {
-      font-size: 70px;
-    }
-    
-    .chua0 { flex-wrap: wrap; }
-    .chu1 {
-      width: 220px;
-      max-width: none;
-      height: 300px;
-      margin-left: -50px;
-    }
-    .chu1:first-of-type { margin-left: 0; }
-    .chu1:nth-child(odd) { transform: translateY(20px); }
-    .chu1:nth-child(even) { transform: translateY(-20px); }
-
-    .chua2, .chua3 { flex-wrap: wrap; }
-    .dong, .dong1 {
-      width: 23%;
-      height: 140px;
-    }
-
-    .chua04 { flex-wrap: wrap; }
-    .chua4 {
-      width: 30%;
-      height: 400px;
-    }
-    .trananh {
-      flex-direction: row;
-      gap: 40px;
-    }
-    .trananh1 {
-      max-width: none;
       width: 350px;
       height: 350px;
+      margin-top: 130px;
+    }
+    .chua, .chua1 {
+      font-size: 18px;
+      padding: 8px 15px;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .cam, .do, .xanh {
+      width: 12px;
+      height: 12px;
+    }
+    .cach {
+      width: 100%;
+      height: 4px;
+    }
+    .khung2 {
+      height: 320px;
+      width: 100%;
+      margin-top: -10px;
+    }
+    .chu {
+      font-size: 32px;
+      margin-top: 15px;
+    }
+    .chua0 {
+      margin-top: 25px;
+    }
+    .chu1 {
+      width: 65px;
+      height: 110px;
+      margin-left: -18px; /* Giữ nguyên hiệu ứng đè lớp so le y chang PC */
+    }
+    .chu1:nth-child(odd) { transform: translateY(10px); }
+    .chu1:nth-child(even) { transform: translateY(-10px); }
+
+    .pl {
+      font-size: 15px;
+      padding: 0 10px;
+      line-height: 1.4;
+    }
+    .chua2, .chua3 {
+      height: 70px;
+      gap: 8px;
+      width: 100%;
+    }
+    .dong, .dong1 {
+      height: 60px;
+      margin-top: -20px;
+    }
+    .chua04 {
+      width: 100%;
+      gap: 8px;
+    }
+    .chua4 {
+      height: 180px;
+    }
+    .trananh {
+      gap: 20px;
+      flex-direction: column; /* Trên điện thoại phần tìm hiểu thêm xếp dọc xuống cho dễ bấm */
+    }
+    .trananh1 {
+      width: 220px;
+      height: 220px;
     }
   }
 </style>
 </head>
 <body>
-
     <!-- Khung chứa ảnh nền riêng biệt -->
     <div class="khung-anh">
         <img src="anh/KEN NGUYỄN-01.png" class="logo" alt="Logo">
@@ -293,7 +356,7 @@
 
     <div class="cach"></div>
 
-    <!-- Khung 2 chứa nội dung mờ -->
+    <!-- Khung 2 chứa nội dung bên trong, tách biệt hoàn toàn với lớp ảnh mờ -->
     <div class="khung2">
         <div class="chu">KEN NGUYỄN (1990)</div>
         <div class="chua0">
@@ -331,7 +394,7 @@
 
     <div class="cach"></div>
 
-    <div class="chua1">CƠ SỞ
+    <div class="chua1" style="margin-top: -10px;">CƠ SỞ
         <div class="cam"></div>
         <div class="do"></div>
         <div class="xanh"></div>
@@ -347,14 +410,14 @@
 
     <div class="cach"></div>
 
-    <p class="pl" style="color: #61b5c4; font-size: 28px; font-weight: bold;">TÌM HIỂU THÊM</p>
+    <p class="pl" style="color: #274a52; font-size: 80px; margin-top: -10px;">TÌM HIỂU THÊM</p>
 
     <div class="trananh">
       <a href="anh.html">
-        <img src="anh/L1.png" class="trananh1" style="border: 12px dashed #0a5897;" alt="Ảnh nút bấm">
+        <img src="anh/L1.png" class="trananh1" style="border: 20px dashed #0a5897;" alt="Ảnh nút bấm">
       </a>
       <a href="dich-vu.html">
-        <img src="L33/L3.png" class="trananh1" style="border: 12px dashed #0a5897;" alt="Ảnh nút bấm">
+        <img src="L33/L3.png" class="trananh1" style="border: 20px dashed #0a5897;" alt="Ảnh nút bấm">
       </a>
     </div>
       
