@@ -6,28 +6,28 @@
     <title>KEN NGUYEN</title>
 <style>
   * {
-    box-sizing: border-box; /* Giúp tính toán kích thước chuẩn, không bị tràn viền */
+    box-sizing: border-box;
   }
 
   body {
     background-color: #2a3148;
     margin: 0;
-    padding: 15px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
     align-items: center;
-    overflow-x: hidden; /* Chặn hoàn toàn việc trượt ngang màn hình */
+    overflow-x: hidden;
   }
 
-  /* Khung chứa ảnh logo ở trên */
+  /* Khung chứa ảnh logo ở trên - Đã tăng chiều cao lên chút để logo không bị tụt */
   .khung-anh {
     background-image: url('nền/nen1.png');
     background-size: cover;          
     background-repeat: no-repeat;    
     background-position: center;    
     width: 100%;    
-    height: 280px;  
+    height: 320px;  
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -43,23 +43,23 @@
     height: auto;
     object-fit: contain;
     position: absolute;
-    bottom: 20px;
+    bottom: 30px; /* Đẩy logo lên cao hơn một chút */
   }
 
-  /* Khung tiêu đề (LÝ LỊCH, KHÁCH HÀNG, CƠ SỞ) */
+  /* Khung tiêu đề */
   .chua, .chua1 {
     background-color: #22283a;
     width: fit-content;          
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 24px;         
+    font-size: 22px;         
     font-weight: bold;
     border-radius: 8px;
-    padding: 10px 18px;
-    gap: 12px;
+    padding: 8px 15px;
+    gap: 10px;
     display: flex;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     margin-right: auto;          
   }
 
@@ -71,18 +71,18 @@
     border-radius: 10px;
   }
 
-  /* Khung 2 */
+  /* Khung 2 chứa nội dung mờ */
   .khung2 {
     position: relative;
     width: 100%;
-    border-radius: 16px;
+    border-radius: 14px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    padding: 25px 10px;
+    gap: 12px;
+    padding: 20px 8px;
   }
 
   .khung2::before {
@@ -108,7 +108,7 @@
   .pl {
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
     line-height: 1.6;
     padding: 0 5px;
@@ -118,7 +118,7 @@
   .chu {
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 32px;         
+    font-size: 28px;         
     font-weight: bold;
     text-align: center;
   }
@@ -130,23 +130,24 @@
     align-items: center;
     justify-content: center;  
     flex-wrap: wrap; 
-    gap: 10px;
+    gap: 8px;
     width: 100%;
   }
 
   .chu1 {
-    width: 30%; 
-    max-width: 100px;
-    height: 110px;
+    width: 18%; 
+    max-width: 75px;
+    height: 95px;
     object-fit: cover;
+    object-position: center top; /* Đổi thành căn từ trên xuống để không bị mất đầu ảnh */
     border-radius: 6px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   }
 
   /* Chấm màu trang trí */
-  .cam { background-color: orange; border-radius: 50%; width: 18px; height: 18px; }
-  .do { background-color: red; border-radius: 50%; width: 18px; height: 18px; }
-  .xanh { background-color: green; border-radius: 50%; width: 18px; height: 18px; }
+  .cam { background-color: orange; border-radius: 50%; width: 15px; height: 15px; }
+  .do { background-color: red; border-radius: 50%; width: 15px; height: 15px; }
+  .xanh { background-color: green; border-radius: 50%; width: 15px; height: 15px; }
 
   /* Khung chứa ảnh khách hàng */
   .chua2, .chua3 {
@@ -156,18 +157,19 @@
     flex-direction: row; 
     flex-wrap: wrap; 
     width: 100%;
-    gap: 10px;
+    gap: 8px;
   }
 
   .dong, .dong1 {
     width: 48%; 
     height: 110px;
     object-fit: cover;
+    object-position: center top; /* Giữ hiển thị chuẩn phần đầu ảnh */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   }
 
-  /* Khung chứa ảnh cơ sở (Đã sửa lỗi bị kéo dài thành cột dọc xấu xí) */
+  /* Khung chứa ảnh cơ sở */
   .chua04 {
     display: flex;
     align-items: center;
@@ -175,22 +177,23 @@
     flex-direction: row; 
     flex-wrap: wrap;
     width: 100%;
-    gap: 10px;
+    gap: 8px;
   }
 
   .chua4 {
     width: 31%;
-    height: 180px;
+    height: 150px;
     object-fit: cover;
+    object-position: center top;
     border-radius: 8px;
     border: 2px solid #7273c588;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   /* Phần Tìm Hiểu Thêm */
   .trananh {
     display: flex;
-    flex-direction: column; /* Trên điện thoại xếp dọc cho dễ bấm */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -200,14 +203,14 @@
   .trananh1 {
     width: 100%;
     max-width: 260px;
-    height: 220px;
+    height: 200px;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   }
 
   /* ==========================================
-     TỐI ƯU RIÊNG CHO MÁY TÍNH (PC / MÀN HÌNH LỚN)
+     TỐI ƯU RIÊNG CHO MÁY TÍNH (PC)
      ========================================== */
   @media (min-width: 768px) {
     body {
@@ -216,6 +219,7 @@
     }
     .khung-anh {
       height: 400px;
+      width: 110%;
     }
     .logo {
       max-width: 700px;
@@ -226,7 +230,11 @@
       padding: 15px 25px;
     }
     .cach {
+      width: 110%;
       height: 7px;
+    }
+    .khung2 {
+      width: 110%;
     }
     .pl {
       font-size: 26px;
@@ -254,7 +262,7 @@
       height: 400px;
     }
     .trananh {
-      flex-direction: row; /* Trên máy tính xếp nằm ngang */
+      flex-direction: row;
       gap: 40px;
     }
     .trananh1 {
