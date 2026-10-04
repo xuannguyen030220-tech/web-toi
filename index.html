@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KEN NGUYEN</title>
+    <title>KEN NGUYỄN</title>
 <style>
   * {
     box-sizing: border-box;
@@ -124,7 +124,7 @@
   }
 
   /* ==========================================
-     ĐIỆN THOẠI: ÉP TẤT CẢ THÀNH 1 HÀNG NGANG
+     ĐIỆN THOẠI: 1 HÀNG NGANG, ĐỦ KHÔNG BỊ CẮT
      ========================================== */
   
   /* Lý lịch (5 ảnh) */
@@ -133,34 +133,34 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;  
-    flex-wrap: nowrap; /* Không cho xuống dòng */
+    flex-wrap: nowrap; 
     gap: 4px;
     width: 100%;
   }
   .chu1 {
-    width: 19%; /* Chia đều cho 5 ảnh nằm gọn 1 hàng */
-    height: 110px;
+    width: 19%; 
+    height: 140px; /* Tăng chiều cao để đủ chỗ chứa ảnh */
     object-fit: cover;
-    object-position: center top;
+    object-position: center; /* Căn giữa để không mất đầu/đuôi */
     border-radius: 6px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   }
 
-  /* Khách hàng nhóm 1 (4 ảnh) và Nhóm 2 (4 ảnh) */
+  /* Khách hàng nhóm 1 và Nhóm 2 (4 ảnh mỗi hàng) */
   .chua2, .chua3 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row; 
-    flex-wrap: nowrap; /* Không cho xuống dòng */
+    flex-wrap: nowrap; 
     width: 100%;
     gap: 4px;
   }
   .dong, .dong1 {
-    width: 24%; /* Chia đều cho 4 ảnh nằm gọn 1 hàng */
-    height: 90px;
-    object-fit: cover;
-    object-position: center top;
+    width: 24%; 
+    height: 140px; /* Tăng chiều cao lên cho thoáng ảnh */
+    object-fit: cover; 
+    object-position: center; /* Hiển thị trọn vẹn toàn bộ ảnh */
     border-radius: 6px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   }
@@ -171,15 +171,15 @@
     align-items: center;
     justify-content: center;
     flex-direction: row; 
-    flex-wrap: nowrap; /* Không cho xuống dòng */
+    flex-wrap: nowrap; 
     width: 100%;
     gap: 6px;
   }
   .chua4 {
-    width: 32%; /* Chia đều cho 3 ảnh nằm gọn 1 hàng */
-    height: 130px;
+    width: 32%; 
+    height: 150px;
     object-fit: cover;
-    object-position: center top;
+    object-position: center;
     border-radius: 6px;
     border: 1.5px solid #7273c588;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
